@@ -36,7 +36,8 @@ router.patch("/:name", function (req, res) {
   if (foundItem === undefined) {
     throw new ExpressError("Item not found", 404);
   }
-  foundItem.name = req.body.name 
+  foundItem.name = req.body.name
+	foundItem.price = req.body.price 
   res.json({ item: foundItem });
 });
 
